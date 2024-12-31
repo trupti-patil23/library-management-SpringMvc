@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.library</groupId>
+	<artifactId>library-management</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>library-management</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<!--<spring.version>3.1.0.RELEASE</spring.version>-->
+		<cglib.version>2.2.2</cglib.version>
+	</properties>
+
+	<dependencies>
+		
+	  <!-- Spring core & mvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.25</version>
+           <!-- <version>6.0.11</version>-->
+        </dependency>        
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+              <version>5.3.25</version>
+         <!--   <version>6.0.11</version>-->
+        </dependency>	
+		
+		  <!-- Spring JDBC -->
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-jdbc</artifactId>
+	        <version>5.3.29</version>
+	    </dependency>
+	    
+		<!-- MySQL Connector -->
+	    <dependency>
+	        <groupId>mysql</groupId>
+	        <artifactId>mysql-connector-java</artifactId>
+	        <version>8.0.30</version>
+	    </dependency> 
+		    
+		<!-- Updated Servlet API for Tomcat 9 (Servlet 4.0) -->
+	    <dependency>
+	        <groupId>javax.servlet</groupId>
+	        <artifactId>javax.servlet-api</artifactId>
+	        <version>4.0.1</version>
+	        <scope>provided</scope>
+	    </dependency>
+	    
+	    <!-- Updated JSP API for Tomcat 9 (JSP 2.3) -->
+	    <dependency>
+	        <groupId>javax.servlet.jsp</groupId>
+	        <artifactId>javax.servlet.jsp-api</artifactId>
+	        <version>2.3.3</version>
+	        <scope>provided</scope>
+	    </dependency>
+	    
+	    <!-- JSTL for JSPs (Standard Tag Library) -->
+	    <dependency>
+	        <groupId>javax.servlet</groupId>
+	        <artifactId>jstl</artifactId>
+	        <version>1.2</version>
+	    </dependency>	 
+
+	</dependencies>
+
+	<build>
+		<finalName>library-management</finalName>
+		 <plugins>
+        <!-- Maven WAR Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version>
+            <configuration>
+                <!-- Optional: Specify web resources and configurations -->
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+
+        <!-- Maven Compiler Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <source>1.8</source> <!-- Set Java source compatibility -->
+                <target>1.8</target> <!-- Set Java target compatibility -->
+            </configuration>
+        </plugin>
+    </plugins>
+	</build>
+</project>
